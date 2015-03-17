@@ -36,7 +36,7 @@ function validateForm(e) {
 }
 
 function showDialog(errors) {
-	var $errorDialog = $( document.getElementById( 'errorMessages' ) ),
+	var $errorDialog = $( document.getElementById( 'errorDialog' ) ),
 		messageString;
 
 	if (!errors.length) {

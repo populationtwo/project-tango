@@ -12,39 +12,62 @@
 <div class="container">
 
 	<div class="form-wrapper">
-
-		<form class="submit-link-form">
+		<fieldset>
 
 			<h1>Got Something Upworthy?</h1>
 
 			<p>What’s the best thing you’ve seen all week? Anything that we missed? We’d love to know what you think
-				should
-				be
-				featured on Upworthy.</p>
+				should be featured on Upworthy.</p>
 
 			<p>Use the form below to submit your favorite stuff to us for consideration. Thanks in advance for your
 				input!</p>
 
+			<div id="errorDialog"></div>
 
-			<div class="">
-				<label>Your email address (required)</label>
-				<input class="form-control" type="email" name="" value="" id="" dir="auto" aria-label="Email address" required="" title="email address." maxlength="50">
+			<form action="" class="submit-link-form" id="submitLinkForm">
+				<div class="input-wrapper">
+					<label class="title">Your email address (required)</label>
+					<input class="form-control form-validate" id="form-email" type="email" name="" value="" dir="auto" aria-label="Email address" required title="email address" placeholder="Your email address (required)" maxlength="40">
+					<span class="form-message">Email is required.</span>
+				</div>
+				<div class="input-wrapper">
+					<label class="title">Link (required)</label>
+					<input class="form-control form-validate" id="form-url" type="url" name="" value="" dir="auto" aria-label="" required placeholder="Link (required)">
+					<span class="form-message">URL is required.</span>
+				</div>
+				<div class="input-wrapper source">
+					<label class="title">Where did you first see this content?</label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="Facebook">Facebook </label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="Twitter"> Twitter
+					</label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="YouTube"> YouTube
+					</label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="Tumblr">Tumblr </label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="Reddit"> Reddit
+					</label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="I made it myself!"> I made it
+						myself!
+					</label>
+					<label class="input-radio">
+						<input type="radio" class="radio" name="radio_button" value="Other"> Other
+						<input name="" type="text" value="" />
+					</label>
+				</div>
+				<button class="submit" id="submitForm">Submit</button>
+			</form>
+		</fieldset>
 
-			</div>
-
-			<div class="">
-				<label>Link (required)</label>
-				<input class="form-control" type="url" name="" value="" id="" dir="auto" aria-label="">
-
-			</div>
-
-
-			<div class="">
-				<label>Where did you first see this content?</label>
-			</div>
-		</form>
 	</div>
 </div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
