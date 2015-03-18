@@ -8,21 +8,14 @@ module.exports = function (grunt) {
 	grunt.initConfig( {
 		pkg: grunt.file.readJSON( 'package.json' ),
 
-		concat: {
-			dist: {
-				src : ['assets/js/src/*.js'],
-				dest: 'assets/js/build/production.js'
-			}
-		},
-
 		jshint: {
-			all: ['assets/js/src/*.js']
+			all: ['assets/js/*.js']
 		},
 
 		uglify: {
 			build: {
-				src : 'assets/js/build/production.js',
-				dest: 'assets/js/build/production.min.js'
+				src : 'assets/js/main.js',
+				dest: 'assets/js/build/main.min.js'
 			}
 		},
 
@@ -50,8 +43,8 @@ module.exports = function (grunt) {
 				}
 			},
 			scripts: {
-				files  : ['assets/js/src/*.js'],
-				tasks  : ['concat', 'uglify', 'jshint'],
+				files  : ['assets/js/*.js'],
+				tasks  : ['uglify', 'jshint'],
 				options: {
 					spawn: false
 				}
@@ -60,12 +53,11 @@ module.exports = function (grunt) {
 	} );
 
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
 	// Default task.
-	grunt.registerTask( 'default', ['concat', 'uglify', 'jshint'] );
+	grunt.registerTask( 'default', ['uglify', 'jshint'] );
 
 	grunt.util.linefeed = '\n';
 };
